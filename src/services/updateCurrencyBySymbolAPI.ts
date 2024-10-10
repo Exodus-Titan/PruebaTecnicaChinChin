@@ -16,7 +16,6 @@ async updateCurrencyBySymbolAPI(symbol: string){
             newPrice = 1;
         }else
             newPrice = await getCurrencyPriceBinance(symbol as string);
-        console.log(newPrice)
         const [numberOfAffectedRows, affectedRows] = await Currency.update(
             {price_in_USD: newPrice},
             {

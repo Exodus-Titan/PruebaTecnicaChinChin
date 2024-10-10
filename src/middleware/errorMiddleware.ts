@@ -15,7 +15,6 @@ class AppError extends Error {
 
 
 const errorMiddleware = (err: AppError, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack); 
     dotenv.config();
     
     res.status(err.statusCode || 500).json({
